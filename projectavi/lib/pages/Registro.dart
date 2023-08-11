@@ -87,6 +87,22 @@ Widget _registroBtn() {
       debugPrint("Nombre Usuario : " + usernameController.text);
       debugPrint("Correo : " + usermailController.text);
       debugPrint("Contraseña : " + passwordController.text);
+
+      showAboutDialog(
+          context: context,
+          children: <Widget>[
+            AlertDialog(
+              title: Text('En este momento no es posible registrarse'),
+              actions: <Widget>[
+                TextButton(onPressed: (){
+                  Navigator.pop(context);
+                },
+                child: Text('Aceptar'),
+                ),
+              ],
+            ),
+          ],
+        );
     },
     child: SizedBox(
       width: double.infinity,
