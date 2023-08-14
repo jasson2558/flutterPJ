@@ -38,9 +38,7 @@ class _PrincipalPageState extends State<PrincipalPage>{
               // Agrega más iconos aquí según tus necesidades
             ],
           ),
-          body: Center(
-            child: Text("pagina principal"),
-          ),
+          body: _page(),
           bottomNavigationBar: BottomAppBar(
             child: Container(
               height: 50.0,
@@ -74,5 +72,73 @@ class _PrincipalPageState extends State<PrincipalPage>{
     );
   }
 
-  
+  //controla la pagina del loguin
+  Widget _page(){
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _extraText2(context),
+            const SizedBox(height: 50),
+            _extraText(context),
+            const SizedBox(height: 30),
+            _recomendaciones()
+            ],
+         ),
+       ),
+     );
+  }
+
+//controla los textos
+  Widget _extraText(BuildContext context){
+    return GestureDetector(
+      onTap: (){},
+      child: Text(
+        "Recomendaciones",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 16,color: Colors.white),
+      ),
+    );
+  }
+
+  Widget _extraText2(BuildContext context){
+    return GestureDetector(
+      onTap: (){},
+      child: Text(
+        "Bienvenido",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 16,color: Colors.white),
+      ),
+    );
+  }
+
+  //controla el icono
+  Widget _recomendaciones() {
+  List<String> recommendationImagePaths = [
+    'images/sillas_colegio_1.jpg',
+    'images/sillas_colegio_2.jpg',
+    // Agrega más rutas de imágenes aquí
+  ];
+
+  return Container(
+    height: 120, // Ajusta la altura según tus necesidades
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: recommendationImagePaths.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            recommendationImagePaths[index],
+            width: 100,
+            height: 100,
+            fit: BoxFit.cover,
+          ),
+        );
+      },
+    ),
+  );
+}
 }
