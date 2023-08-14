@@ -115,30 +115,18 @@ class _PrincipalPageState extends State<PrincipalPage>{
   }
 
   //controla el icono
-  Widget _recomendaciones() {
-  List<String> recommendationImagePaths = [
-    'images/sillas_colegio_1.jpg',
-    'images/sillas_colegio_2.jpg',
-    // Agrega más rutas de imágenes aquí
-  ];
-
-  return Container(
-    height: 120, // Ajusta la altura según tus necesidades
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: recommendationImagePaths.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(
-            recommendationImagePaths[index],
-            width: 100,
-            height: 100,
-            fit: BoxFit.cover,
-          ),
-        );
-      },
-    ),
-  );
-}
+  Widget _recomendaciones(){
+    return GestureDetector(
+      onTap: (){},
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white, width: 2),
+        ),
+      child: Image.asset(
+        'images/sillas_colegio_1.jpg',
+        width: 100,
+        height: 100,
+        fit: BoxFit.cover,
+        ),
+    );
+  }
 }
