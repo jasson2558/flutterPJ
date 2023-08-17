@@ -137,7 +137,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
           context: context,
           children: <Widget>[
             AlertDialog(
-              title: Text('Usuario o contraseña icorrectos'),
+              title: Text('lo sentimos de momento este servicio no esta dispoible'),
               actions: <Widget>[
                 TextButton(onPressed: (){
                   Navigator.pop(context);
